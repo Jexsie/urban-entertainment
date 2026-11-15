@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Urban Entertainment</title>
+  <rect width="64" height="64" rx="14" fill="#2f4ac2"/>
+  <!-- Ticket with side notches and a perforation -->
+  <g transform="rotate(-12 32 32)">
+    <path fill="#ff7a59" fill-rule="evenodd" d="M12 20 H52 V28 A4 4 0 0 0 52 36 V44 H12 V36 A4 4 0 0 0 12 28 Z"/>
+    <line x1="38" y1="22.5" x2="38" y2="41.5" stroke="#2f4ac2" stroke-width="2" stroke-dasharray="2.5 2.5"/>
+    <path d="M25 26.5 L26.8 30.2 L30.9 30.8 L27.9 33.6 L28.6 37.6 L25 35.7 L21.4 37.6 L22.1 33.6 L19.1 30.8 L23.2 30.2 Z" fill="#ffffff"/>
+  </g>
+</svg>

@@ -11,7 +11,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en">
       <body>
         <header className="site">
-          <span className="brand">URBAN ENTERTAINMENT</span>
+          {/* eslint-disable-next-line @next/next/no-img-element -- small static SVG */}
+          <img src="/logo.svg" alt="" width={32} height={32} />
+          <span className="brand">Urban Entertainment</span>
         </header>
         {children}
       </body>

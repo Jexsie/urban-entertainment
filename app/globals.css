@@ -1,13 +1,31 @@
 :root {
-  --bg: #0b0b12;
-  --surface: #151522;
-  --text: #f2f0ff;
-  --muted: #a3a0bd;
-  --border: #2a2840;
-  --neon: #ff2bd6;
-  --neon-2: #19e3ff;
-  --ok: #4ade80;
-  --bad: #ff6b6b;
+  --bg: #f7f5f1;
+  --surface: #ffffff;
+  --text: #1d2433;
+  --muted: #5f6878;
+  --border: #e4e0d8;
+  --primary: #2f4ac2;
+  --primary-text: #ffffff;
+  --accent: #ff7a59;
+  --accent-soft: #fff0eb;
+  --ok: #15803d;
+  --bad: #c2410c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141821;
+    --surface: #1c2230;
+    --text: #eef1f7;
+    --muted: #a3acbd;
+    --border: #2c3445;
+    --primary: #6f86ff;
+    --primary-text: #0f1424;
+    --accent: #ff9478;
+    --accent-soft: #2a211f;
+    --ok: #4ade80;
+    --bad: #fb923c;
+  }
 }
 
 * {
@@ -18,21 +36,24 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(ellipse at top, #2a0f3d 0%, var(--bg) 60%);
+  background: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
 }
 
 header.site {
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 
 .brand {
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .page {
@@ -40,7 +61,7 @@ header.site {
   margin: 0 auto;
   padding: 32px 16px 64px;
   display: grid;
-  gap: 32px;
+  gap: 28px;
 }
 
 .page.narrow {
@@ -48,23 +69,29 @@ header.site {
   gap: 16px;
 }
 
+.hero {
+  background: var(--accent-soft);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+
 .eyebrow {
-  color: var(--neon-2);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 9vw, 5rem);
-  line-height: 1;
-  color: var(--neon);
-  text-shadow: 0 0 24px rgba(255, 43, 214, 0.55);
+  font-size: clamp(2.25rem, 8vw, 4rem);
+  line-height: 1.05;
+  color: var(--text);
+  letter-spacing: -0.02em;
 }
 
 .tagline {
   margin-top: 8px;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  color: var(--muted);
 }
 
 .facts {
@@ -77,7 +104,7 @@ header.site {
 .facts dt {
   color: var(--muted);
   font-size: 0.8rem;
-  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .tickets,
@@ -100,26 +127,31 @@ header.site {
   width: min(320px, 100%);
   height: auto;
   background: #fff;
+  border: 1px solid var(--border);
   border-radius: 12px;
 }
 
 .cta {
   display: inline-block;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   padding: 12px 20px;
-  border-radius: 999px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(90deg, var(--neon), #8b5cf6);
-  color: #fff;
+  background: var(--primary);
+  color: var(--primary-text);
   text-decoration: none;
+}
+
+.cta:hover {
+  filter: brightness(1.08);
 }
 
 .cta.secondary {
   background: transparent;
-  border: 1px solid var(--neon-2);
-  color: var(--neon-2);
+  border: 1px solid var(--primary);
+  color: var(--primary);
 }
 
 .cta:disabled {
