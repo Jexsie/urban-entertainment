@@ -1,0 +1,163 @@
+:root {
+  --bg: #0b0b12;
+  --surface: #151522;
+  --text: #f2f0ff;
+  --muted: #a3a0bd;
+  --border: #2a2840;
+  --neon: #ff2bd6;
+  --neon-2: #19e3ff;
+  --ok: #4ade80;
+  --bad: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #2a0f3d 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+header.site {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+  display: grid;
+  gap: 32px;
+}
+
+.page.narrow {
+  max-width: 560px;
+  gap: 16px;
+}
+
+.eyebrow {
+  color: var(--neon-2);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 9vw, 5rem);
+  line-height: 1;
+  color: var(--neon);
+  text-shadow: 0 0 24px rgba(255, 43, 214, 0.55);
+}
+
+.tagline {
+  margin-top: 8px;
+  font-size: 1.15rem;
+}
+
+.facts {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.tickets,
+.checkout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.gate {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.qr {
+  width: min(320px, 100%);
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.cta {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--neon), #8b5cf6);
+  color: #fff;
+  text-decoration: none;
+}
+
+.cta.secondary {
+  background: transparent;
+  border: 1px solid var(--neon-2);
+  color: var(--neon-2);
+}
+
+.cta:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+select {
+  font: inherit;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+a {
+  color: inherit;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.ok {
+  color: var(--ok);
+  font-weight: 600;
+}
+
+.bad {
+  color: var(--bad);
+  font-weight: 600;
+}
